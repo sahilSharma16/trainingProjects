@@ -1,0 +1,20 @@
+COLUMN TABLE app_req_raisedRequest (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  id INTEGER NOT NULL,
+  userName NVARCHAR(5000) NOT NULL,
+  email NVARCHAR(5000),
+  phoneNo NVARCHAR(5000),
+  department NVARCHAR(5000),
+  formType NVARCHAR(5000) NOT NULL,
+  requestedAt NVARCHAR(5000),
+  fromDate NVARCHAR(5000),
+  toDate NVARCHAR(5000),
+  assetType NVARCHAR(5000),
+  action BOOLEAN,
+  status BOOLEAN,
+  reason NVARCHAR(5000),
+  PRIMARY KEY(id, userName, formType)
+)

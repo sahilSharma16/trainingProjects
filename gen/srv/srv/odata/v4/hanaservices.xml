@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+    <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Core.V1.xml">
+    <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+    <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+  </edmx:Reference>
+  <edmx:DataServices>
+    <Schema Namespace="hanaservices" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+      <EntityContainer Name="EntityContainer">
+        <EntitySet Name="fieldTable" EntityType="hanaservices.fieldTable"/>
+        <EntitySet Name="formFieldTable" EntityType="hanaservices.formFieldTable"/>
+        <EntitySet Name="formMaster" EntityType="hanaservices.formMaster"/>
+        <EntitySet Name="raisedRequest" EntityType="hanaservices.raisedRequest"/>
+      </EntityContainer>
+      <EntityType Name="fieldTable">
+        <Key>
+          <PropertyRef Name="id"/>
+          <PropertyRef Name="fieldName"/>
+        </Key>
+        <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="fieldName" Type="Edm.String" Nullable="false"/>
+        <Property Name="fieldDesc" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="formFieldTable">
+        <Key>
+          <PropertyRef Name="id"/>
+          <PropertyRef Name="formType"/>
+          <PropertyRef Name="paraName"/>
+        </Key>
+        <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="checkedField" Type="Edm.Boolean"/>
+        <Property Name="formType" Type="Edm.String" Nullable="false"/>
+        <Property Name="formDesc" Type="Edm.String"/>
+        <Property Name="paraName" Type="Edm.String" Nullable="false"/>
+        <Property Name="paraDesc" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="formMaster">
+        <Key>
+          <PropertyRef Name="id"/>
+          <PropertyRef Name="formName"/>
+        </Key>
+        <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="formName" Type="Edm.String" Nullable="false"/>
+        <Property Name="formDesc" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="raisedRequest">
+        <Key>
+          <PropertyRef Name="id"/>
+          <PropertyRef Name="userName"/>
+          <PropertyRef Name="formType"/>
+        </Key>
+        <Property Name="createdAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="createdBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="modifiedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+        <Property Name="modifiedBy" Type="Edm.String" MaxLength="255"/>
+        <Property Name="id" Type="Edm.Int32" Nullable="false"/>
+        <Property Name="userName" Type="Edm.String" Nullable="false"/>
+        <Property Name="email" Type="Edm.String"/>
+        <Property Name="phoneNo" Type="Edm.String"/>
+        <Property Name="department" Type="Edm.String"/>
+        <Property Name="formType" Type="Edm.String" Nullable="false"/>
+        <Property Name="requestedAt" Type="Edm.String"/>
+        <Property Name="fromDate" Type="Edm.String"/>
+        <Property Name="toDate" Type="Edm.String"/>
+        <Property Name="assetType" Type="Edm.String"/>
+        <Property Name="action" Type="Edm.Boolean"/>
+        <Property Name="status" Type="Edm.Boolean"/>
+        <Property Name="reason" Type="Edm.String"/>
+      </EntityType>
+      <Annotations Target="hanaservices.fieldTable/createdAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.fieldTable/createdBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.fieldTable/modifiedAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.fieldTable/modifiedBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.formMaster/createdAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.formMaster/createdBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.formMaster/modifiedAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.formMaster/modifiedBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.raisedRequest/createdAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.raisedRequest/createdBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Immutable" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>CreatedBy}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.raisedRequest/modifiedAt">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedAt}"/>
+      </Annotations>
+      <Annotations Target="hanaservices.raisedRequest/modifiedBy">
+        <Annotation Term="UI.HiddenFilter" Bool="true"/>
+        <Annotation Term="Core.Computed" Bool="true"/>
+        <Annotation Term="Core.Description" String="{i18n>UserID.Description}"/>
+        <Annotation Term="Common.Label" String="{i18n>ChangedBy}"/>
+      </Annotations>
+    </Schema>
+  </edmx:DataServices>
+</edmx:Edmx>

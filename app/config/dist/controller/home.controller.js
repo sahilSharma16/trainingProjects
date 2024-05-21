@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("app.config.controller.home",{onInit:function(){},onCreateField:function(){const e=this.getOwnerComponent().getRouter();e.navTo("RoutecreateField")},onCreateForm:function(){const e=this.getOwnerComponent().getRouter();e.navTo("RouteformMaster")}})});

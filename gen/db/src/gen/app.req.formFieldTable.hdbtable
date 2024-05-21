@@ -1,0 +1,9 @@
+COLUMN TABLE app_req_formFieldTable (
+  id INTEGER NOT NULL,
+  checkedField BOOLEAN,
+  formType NVARCHAR(5000) NOT NULL,
+  formDesc NVARCHAR(5000),
+  paraName NVARCHAR(5000) NOT NULL,
+  paraDesc NVARCHAR(5000),
+  PRIMARY KEY(id, formType, paraName)
+)

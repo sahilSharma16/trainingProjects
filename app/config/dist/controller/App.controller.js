@@ -1,0 +1,1 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/routing/History"],function(n,o){"use strict";return n.extend("app.config.controller.App",{onInit:function(){},onPressBack:function(){window.history.back()},onLogoPressed:function(){}})});

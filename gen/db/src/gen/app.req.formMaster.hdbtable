@@ -1,0 +1,10 @@
+COLUMN TABLE app_req_formMaster (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  id INTEGER NOT NULL,
+  formName NVARCHAR(5000) NOT NULL,
+  formDesc NVARCHAR(5000),
+  PRIMARY KEY(id, formName)
+)

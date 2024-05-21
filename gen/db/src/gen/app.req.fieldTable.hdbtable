@@ -1,0 +1,10 @@
+COLUMN TABLE app_req_fieldTable (
+  createdAt TIMESTAMP,
+  createdBy NVARCHAR(255),
+  modifiedAt TIMESTAMP,
+  modifiedBy NVARCHAR(255),
+  id INTEGER NOT NULL,
+  fieldName NVARCHAR(5000) NOT NULL,
+  fieldDesc NVARCHAR(5000),
+  PRIMARY KEY(id, fieldName)
+)

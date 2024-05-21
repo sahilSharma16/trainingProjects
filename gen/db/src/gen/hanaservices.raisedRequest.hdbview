@@ -1,0 +1,19 @@
+VIEW hanaservices_raisedRequest AS SELECT
+  raisedRequest_0.createdAt,
+  raisedRequest_0.createdBy,
+  raisedRequest_0.modifiedAt,
+  raisedRequest_0.modifiedBy,
+  raisedRequest_0.id,
+  raisedRequest_0.userName,
+  raisedRequest_0.email,
+  raisedRequest_0.phoneNo,
+  raisedRequest_0.department,
+  raisedRequest_0.formType,
+  raisedRequest_0.requestedAt,
+  raisedRequest_0.fromDate,
+  raisedRequest_0.toDate,
+  raisedRequest_0.assetType,
+  raisedRequest_0.action,
+  raisedRequest_0.status,
+  raisedRequest_0.reason
+FROM app_req_raisedRequest AS raisedRequest_0

@@ -1,0 +1,9 @@
+VIEW hanaservices_fieldTable AS SELECT
+  fieldTable_0.createdAt,
+  fieldTable_0.createdBy,
+  fieldTable_0.modifiedAt,
+  fieldTable_0.modifiedBy,
+  fieldTable_0.id,
+  fieldTable_0.fieldName,
+  fieldTable_0.fieldDesc
+FROM app_req_fieldTable AS fieldTable_0

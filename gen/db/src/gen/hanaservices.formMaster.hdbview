@@ -1,0 +1,9 @@
+VIEW hanaservices_formMaster AS SELECT
+  formMaster_0.createdAt,
+  formMaster_0.createdBy,
+  formMaster_0.modifiedAt,
+  formMaster_0.modifiedBy,
+  formMaster_0.id,
+  formMaster_0.formName,
+  formMaster_0.formDesc
+FROM app_req_formMaster AS formMaster_0

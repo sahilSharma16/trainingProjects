@@ -1,0 +1,8 @@
+VIEW hanaservices_formFieldTable AS SELECT
+  formFieldTable_0.id,
+  formFieldTable_0.checkedField,
+  formFieldTable_0.formType,
+  formFieldTable_0.formDesc,
+  formFieldTable_0.paraName,
+  formFieldTable_0.paraDesc
+FROM app_req_formFieldTable AS formFieldTable_0
